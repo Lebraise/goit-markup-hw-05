@@ -54,7 +54,7 @@
         <section class="hero order-hero">
             <div class="container order-block">
                 <h1 class="order-title">ЭФФЕКТИВНЫЕ РЕШЕНИЯ<br>ДЛЯ ВАШОГО БИЗНЕСА</h1>
-                <button type="button" class="order-button">Заказать услугу</button>
+                <button data-modal-open type="button" class="order-button">Заказать услугу</button>
             </div>
         </section>
         <!-- Особености -->
@@ -108,12 +108,15 @@
                 <ul class="list work-list">
                     <li class="work-item">
                         <img src="./images/doingone.jpg" alt="Фото чем мы занимаемся" width="370">
+                        <p class="work-item-text">Десктопные приложения</p>
                     </li>
                     <li class="work-item">
                         <img src="./images/doingtwo.jpg" alt="Фото чем мы занимаемся" width="370">
+                        <p class="work-item-text">Мобильные приложения</p>
                     </li>
                     <li class="work-item">
                         <img src="./images/doingthree.jpg" alt="Фото чем мы занимаемся" width="370">
+                        <p class="work-item-text">Дизайнерские решения</p>
                     </li>
                 </ul>
             </div>           
@@ -382,5 +385,15 @@
             </div>
         </div>
     </footer>
+    <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+            <button type="button" class="modal-close" data-modal-close>
+            <svg class="modal-close-svg" width="11" height="11">
+                <use href="/images/icons.svg#icon-close-button"></use>
+            </svg>
+            </button>
+        </div>
+    </div>
+    <script src="./js/modal.js"></script>
 </body>
 </html>

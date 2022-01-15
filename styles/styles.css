@@ -121,21 +121,36 @@ button {
 .list-studio:hover,
 .list-studio:focus {
     color: var(--main-color);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .list-portfolio:hover,
 .list-portfolio:focus {
     color: var(--main-color);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .list-contacts:hover,
 .list-contacts:focus {
     color: var(--main-color);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
 .current { 
-    color: #2196F3; 
+    color: #2196F3;
+    position: relative;
+}
+
+.current::after {
+    content: '';
+    width: 100%;
+    height: 4px;
+    background: #2196F3;
+    border-radius: 2px;
+    position: absolute;
+    left: 0;
+    bottom: -28px;
 }
 
 .contact-list {
@@ -164,6 +179,7 @@ button {
 .envelope:hover, 
 .envelope:focus {
     fill: #2196F3;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -196,6 +212,7 @@ button {
 .header-tel:hover,
 .header-tel:focus {
    color: var(--main-color);
+   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* -------------Стилизация Main------------- */
@@ -256,7 +273,8 @@ button {
 .order-button:focus {
     background: #188CE8;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-    border-radius: 4px;;
+    border-radius: 4px;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* --Стилизация блока особеностей-- */
@@ -332,12 +350,35 @@ button {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding-left: 0;
-    
+    padding-left: 0; 
 }
 
 .work-item:not(:last-child) {
     margin-right: 30px;
+}
+
+.work-item {
+    position: relative;
+    width: 370px;
+    height: 294px;
+}
+
+.work-item-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgba(47, 48, 58, 0.8);
+    width: 370px;
+    min-height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    line-height: 1.14;
+    text-align: center;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #ffffff;
 }
 
 .team-section {
@@ -406,6 +447,7 @@ button {
 .member-icon-link:focus {
     background: #2196F3;
     color: #ffffff;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .member-icon-list {
@@ -449,6 +491,7 @@ button {
     box-sizing: border-box;
     border-radius: 4px;
     color: #2196F3;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -548,6 +591,7 @@ button {
 .adress-link:hover,
 .adress-link:focus {
     background: #2196F3;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -618,6 +662,7 @@ button {
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
     border-radius: 4px;
     color: #ffffff;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-title {
@@ -674,6 +719,30 @@ button {
     margin-right: 30px;
 }
 
+.project-item:hover .project-img-text{
+    transform: translateY(0);
+}
+
+.project-item-wrap {
+    position: relative;
+    overflow: hidden;
+}
+
+.project-img-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(33, 150, 243, 0.9);
+    font-size: 18px;
+    line-height: 1.56;
+    color: #ffffff;
+    padding: 63px 24px;
+    height: 100%;
+    width: 100%;
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .bg:hover,
 .bg:focus {
     background: #FFFFFF;
@@ -682,6 +751,7 @@ button {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 
     0px 4px 4px rgba(0, 0, 0, 0.06), 
     1px 4px 6px rgba(0, 0, 0, 0.16);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-item:nth-last-child(-n+3) {
@@ -693,4 +763,49 @@ button {
     padding-left: 24px;
     padding-bottom: 20px;
     padding-right: 24px;
+}
+
+/*-----------------Модалка-------------- */
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.backdrop.is-hidden .modal {
+    transform: scale(0.5);
+}
+
+.modal {
+    width: 528px;
+    min-height: 581px;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+
+.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
 }
